@@ -57,6 +57,9 @@ cafile {{ .certfile }}
 certfile {{ .certfile }}
 keyfile {{ .keyfile }}
 require_certificate {{ .require_certificate }}
+{{ if .require_certificate }}
+use_identity_as_username {{ .use_identity_as_username }}
+{{ end }}
 
 listener 8884
 protocol websockets
@@ -68,5 +71,8 @@ cafile {{ .certfile }}
 certfile {{ .certfile }}
 keyfile {{ .keyfile }}
 require_certificate {{ .require_certificate }}
+{{ if .require_certificate }}
+use_identity_as_username {{ .use_identity_as_username }}
+{{ end }}
 
 {{ end }}
